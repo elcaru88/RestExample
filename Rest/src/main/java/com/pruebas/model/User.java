@@ -1,11 +1,34 @@
 package com.pruebas.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_user")
+	private int id;
+	@Column
 	private String nickName;
+	@Column
 	private String password;
+	@Column
 	private String name;
+	@Column
 	private int age;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getNickName() {
 		return nickName;
